@@ -10,7 +10,6 @@ Marketing campaigns don't perform equally across all customers — some segments
 
 ## Objective
 Analyze customer behavior and marketing campaign response data to identify which customer segments are most valuable and least engaged — through data cleaning, exploratory analysis, SQL querying, and a final dashboard with actionable business recommendations.
-2,240 customer records covering demographics, spending across 6 product categories, purchase channels, and marketing campaign responses.
 
 
 ## Week 1 — Data Cleaning
