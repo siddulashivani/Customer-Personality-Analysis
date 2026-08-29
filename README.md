@@ -12,6 +12,9 @@ Marketing campaigns don't perform equally across all customers — some segments
 Analyze customer behavior and marketing campaign response data to identify which customer segments are most valuable and least engaged — through data cleaning, exploratory analysis, SQL querying, and a final dashboard with actionable business recommendations.
 2,240 customer records covering demographics, spending across 6 product categories, purchase channels, and marketing campaign responses.
 
+## Week 1 — Data Cleaning
+Cleaned the raw dataset to make it analysis-ready — handling missing values, removing duplicates, fixing data types, and resolving inconsistent or invalid entries. Every cleaning decision is documented and justified rather than applied blindly.
+
 ## What was cleaned
 | Issue | Action | Reasoning |
 |---|---|---|
@@ -34,3 +37,29 @@ Analyze customer behavior and marketing campaign response data to identify which
 - **Jupyter Notebook** — analysis environment
 
 
+## Week 2 — Exploratory Data Analysis
+
+Explored the cleaned dataset to uncover patterns in customer spending and campaign response behavior. Computed descriptive statistics and built 6 visualizations, each tied to a specific business question.
+
+### Key Findings
+| Finding | Insight |
+|---|---|
+| Income distribution | Right-skewed — most customers earn 25,000–75,000, with a long tail of higher earners |
+| Spend by education | Basic-education customers spend ~82 on average, roughly 8x lower than every other education group (500–670 range) |
+| Spend by marital status | Widow customers show a higher median spend despite being the smallest group |
+| Purchases by channel | Store purchases dominate over web and catalog |
+| Campaign acceptance rates | The most recent campaign ('Response') hit ~15% acceptance — roughly double every earlier campaign |
+| Income vs. spend | Positive correlation overall, but a segment of mid/high-income customers under-spend relative to income |
+
+### Visualizations
+1. Income distribution (histogram)
+2. Average spend by education level (bar chart)
+3. Spend distribution by marital status (boxplot)
+4. Purchases by channel (bar chart)
+5. Campaign acceptance rates (bar chart)
+6. Income vs. total spend (scatter plot)
+
+## Tools Used
+- **Python** (Pandas, NumPy) — data cleaning and manipulation
+- **Matplotlib, Seaborn** — data visualization
+- **Jupyter Notebook** — analysis environment
