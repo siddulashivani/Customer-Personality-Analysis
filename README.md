@@ -67,7 +67,6 @@ Explored the cleaned dataset to uncover patterns in customer spending and campai
 
 ## Week 3 — SQL Analysis (PostgreSQL)
 
-## Approach
 Answered the same kinds of business questions from Week 2, this time in SQL using PostgreSQL. Since the
 cleaned dataset is a single flat file, it was split into four related tables — `customers`, `spending`,
 `purchases`, and `campaigns` — all linked by customer ID, so the queries below include real JOINs across
