@@ -63,3 +63,63 @@ Explored the cleaned dataset to uncover patterns in customer spending and campai
 - **Python** (Pandas, NumPy) — data cleaning and manipulation
 - **Matplotlib, Seaborn** — data visualization
 - **Jupyter Notebook** — analysis environment
+
+
+## Week 3 — SQL Analysis (PostgreSQL)
+
+## Approach
+Answered the same kinds of business questions from Week 2, this time in SQL using PostgreSQL. Since the
+cleaned dataset is a single flat file, it was split into four related tables — `customers`, `spending`,
+`purchases`, and `campaigns` — all linked by customer ID, so the queries below include real JOINs across
+genuinely separate tables rather than working with one table alone.
+
+### Database Structure
+| Table | Rows | Description |
+|---|---|---|
+| `customers` | 2,237 | Demographics: education, marital status, income, age, complaints |
+| `spending` | 13,422 | One row per customer per product category (melted from 6 spend columns) |
+| `purchases` | 11,185 | One row per customer per purchase channel (melted from channel columns) |
+| `campaigns` | 13,422 | One row per customer per campaign (melted from 6 campaign columns) |
+
+### The 10 Queries
+| # | Question Answered | Technique Used |
+|---|---|---|
+| 1 | Which education group generates the most total spend? | JOIN + GROUP BY |
+| 2 | Within each marital status, which category drives the most spend? | JOIN + 2-column GROUP BY |
+| 3 | Are latest-campaign responders wealthier than average? | JOIN + subquery |
+| 4 | Does education level affect web purchase behavior? | JOIN + WHERE + GROUP BY |
+| 5 | Which campaign performed best? | Aggregation |
+| 6 | How many customers are "high spenders"? | Subquery |
+| 7 | Do certain education groups complain more? | GROUP BY |
+| 8 | Who are the top 5 highest-value customers? | JOIN + subquery + LIMIT |
+| 9 | Do purchase channel preferences shift by age group? | JOIN + CASE + GROUP BY |
+| 10 | What's the income profile of childless, above-average spenders? | Nested subquery |
+
+### Verifying Pandas vs SQL (PostgreSQL)
+| Metric | SQL Result | Pandas Result | Match |
+|---|---|---|---|
+| Total spend, Graduation | 698,626.00 | 698,626 | ✅ |
+| Total spend, Basic | 4,417.00 | 4,417 | ✅ |
+| Campaign6_Latest acceptance rate | 14.93% | 14.93% | ✅ |
+| Childless high-spenders count | 478 | 478 | ✅ |
+| Childless high-spenders avg income | 75,955.28 | 75,955.28 | ✅ |
+
+### Key Findings
+- **Income, not education itself, appears to drive the spend gap** — latest-campaign responders average
+  60,183 income vs. 52,227 overall (Query 3), and higher-education customers also skew toward higher income.
+- **The most recent campaign meaningfully outperformed every prior one** — 14.93% acceptance vs. 1.34%–7.47%
+  for the previous five campaigns (Query 5).
+- **A clear high-value segment exists**: 478 childless customers who spend above average carry an average
+  income of 75,955.28 — well above the overall base of 52,227 (Query 10).
+
+## Tools Used
+- **Python** (Pandas, NumPy) — data cleaning and manipulation
+- **Matplotlib, Seaborn** — data visualization
+- **PostgreSQL** — relational database, SQL querying and validation
+- **pgAdmin** — PostgreSQL database management and query execution
+- **Jupyter Notebook** — analysis environment
+- **Power BI Desktop** — dashboard and business intelligence reporting *(Week 4)*
+- **Microsoft Word** — insights report
+- **GitHub** — version control and project hosting
+
+
