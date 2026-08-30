@@ -111,17 +111,6 @@ genuinely separate tables rather than working with one table alone.
 - **A clear high-value segment exists**: 478 childless customers who spend above average carry an average
   income of 75,955.28 — well above the overall base of 52,227 (Query 10).
 
-
-### Verifying Pandas vs SQL (PostgreSQL)
-| Metric | SQL Result | Pandas Result | Match |
-|---|---|---|---|
-| Total spend, Graduation | 698,626.00 | 698,626 | ✅ |
-| Total spend, Basic | 4,417.00 | 4,417 | ✅ |
-| Campaign6_Latest acceptance rate | 14.93% | 14.93% | ✅ |
-| Childless high-spenders count | 478 | 478 | ✅ |
-| Childless high-spenders avg income | 75,955.28 | 75,955.28 | ✅ |
-
-
 ## Tools Used
 - **Python** (Pandas, NumPy) — data cleaning and manipulation
 - **Matplotlib, Seaborn** — data visualization
