@@ -150,10 +150,12 @@ Turned the analysis from Weeks 1-3 into a 2-page Power BI dashboard and a writte
 ### Dashboard Preview
 
 **Page 1 — Campaign & Spending Insights**
+
 <img width="1107" height="606" alt="Page_1" src="https://github.com/user-attachments/assets/e8421f56-5030-4eab-8679-4ad366bc4670" />
 
 
 **Page 2 — Customer Demographics**
+
 <img width="1108" height="605" alt="Page_2" src="https://github.com/user-attachments/assets/95a64705-8de5-449c-a812-6e5968c02e4b" />
 
 
