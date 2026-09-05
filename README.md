@@ -121,4 +121,52 @@ genuinely separate tables rather than working with one table alone.
 - **Microsoft Word** — insights report
 - **GitHub** — version control and project hosting
 
+## Week 4 — Insights Dashboard & Report
 
+**Dashboard & Report:** Customer Personality Analysis Dashboard a 2-page Power BI dashboard covering campaign performance, spending patterns, and customer demographics.
+
+Turned the analysis from Weeks 1-3 into a 2-page Power BI dashboard and a written report with 3 specific, actionable recommendations — each following a finding → supporting chart → action structure.
+
+### Dashboard Structure
+
+**Page 1 — Dashboard Overview (Campaign & Spending Insights)**
+| Visual | Details |
+|---|---|
+| KPI cards | Total Spend ($1,355,048), High-Value Customers (917), Average Age (45.1), Campaign Success Rate (14.93%) |
+| Spending by Product Category | Bar chart — Wines and Meat dominate total spend |
+| Income vs Total Spend | Scatter chart — positive correlation, one dot per customer |
+| Average Spend by Age Group | Line chart — dips at 31-40, rises steadily through 61-70 |
+| Slicers | Age Group, Income Bucket, Campaign Accepted |
+
+**Page 2 — Customer Insights (Demographics)**
+| Visual | Details |
+|---|---|
+| KPI cards | Total Customers (2,237), Avg Income ($52,227), Average Age (45.1), Response Rate (14.93%) |
+| Marital Status | Donut chart — 39% Married, 26% Together, 22% Single, 10% Divorced, 3% Widow |
+| Education Level | Bar chart — 50% Graduation, 22% PhD, 17% Master, 9% 2n Cycle, 2% Basic |
+| Age Distribution | Bar chart — 29% aged 41-50, the largest single band |
+| Slicers | Education, Marital Status, Children at Home |
+
+### Key DAX Measures
+\```dax
+Total Spend = SUM(customers[Total_Spend_Check])
+Total Customers = DISTINCTCOUNT(customers[ID])
+Avg Income = AVERAGE(customers[Income])
+Avg Age = AVERAGE(customers[Age])
+High Value Customers = CALCULATE(DISTINCTCOUNT(customers[ID]), FILTER(customers, customers[Total_Spend_Check] > [Avg Spend per Customer]))
+Campaign Rate = AVERAGE(customers[Response]) * 100
+\```
+
+### Report: 3 Recommendations
+1. **Target childless, higher-income households** — 478 customers with no dependents and above-average spend
+   carry an average income of $75,955, 45% above the overall base. Prioritize this segment for the next campaign.
+2. **Re-engage Basic-education customers with value-tier offers, not premium ones** — this group spends ~8x
+   less than every other education group and shows the lowest engagement across every channel; the gap is
+   income-driven, not preference-driven.
+3. **Study and replicate what made the latest campaign succeed** — it achieved 14.93% acceptance, nearly
+   double the best-performing prior campaign, and skewed toward higher-income responders.
+
+## Tools Used
+- **Power BI Desktop** — dashboard building and DAX measures
+- **Power Query** — data shaping and unpivoting for the dashboard
+- **Microsoft Word** — insights report
